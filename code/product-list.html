@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+        <!-- font awesome icon -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+            integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <title>product list</title>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-sm-top ">
+            <div class="container">
+                <a href="" class="navbar-brand">LOGO</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse text-center justify-content-end" id="navbarSupportedContent">
+                    <form class="">
+                        <input class="form-control " type="search" placeholder="Search" aria-label="Search">
+                    </form>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"> <i class="fa-solid fa-cart-plus fa-shake fa-xl"
+                                    style="color: white;"></i></a>
+                        </li>
+
+                        <li class="nav-item ms-md-4">
+                            <a class="nav-link" href="#">username</a>
+                        </li>
+                        <li class="nav-item">
+
+                            <div class="dropdown">
+                                <button class="btn btn-default dropdown-toggle" type="button" id="menu1"
+                                    data-bs-toggle="dropdown">
+                                    <img class="rounded-circle" src="https://i.stack.imgur.com/KKhkr.png?s=128&g=1"
+                                        height="30px" width="30px">
+                                </button>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                                    <li><a class="dropdown-item me-3" href="#">setting</a></li>
+                                    <li><a class="dropdown-item me-3" href="#">log out</a></li>
+
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+        </nav>
+
+
+        <div class="container-fluid mt-3">
+            <div class="row">
+                <div class="col-lg-3 colmd d-none d-sm-block">
+
+                    <div class="container-fluid">
+                        <h3 class="text-center mt-2">Filter <i class="fa-sharp fa-solid fa-filter"></i></h3>
+
+                        <!-- repeat this row multiple times  -->
+                        <div class="row row-cols-md-2 row-cols-lg-4 shadow my-4 rounded-3">
+                            <h4 class="w-100">RAM</h4>
+                            <div class="col my-3"><a href=""
+                                    class="bg-primary text-white px-md-4 px-lg-3 py-2 rounded-pill">3GB</a>
+                            </div>
+                            <div class="col my-3"><a href=""
+                                    class="bg-primary text-white px-md-4 px-lg-3 py-2 rounded-pill">4GB</a>
+                            </div>
+                            <div class="col my-3"><a href=""
+                                    class="bg-primary text-white px-md-4 px-lg-3 py-2 rounded-pill">6GB</a>
+                            </div>
+                            <div class="col my-3"><a href=""
+                                    class="bg-primary text-white px-md-4 px-lg-3 py-2 rounded-pill">8GB</a>
+                            </div>
+
+                        </div>
+                        <!-- repeat row end -->
+
+
+                        <!-- repeat this row multiple times  -->
+                        <div class="row row-cols-md-2 row-cols-lg-4 shadow my-4 rounded-3">
+                            <h4 class="w-100">ROM</h4>
+                            <div class="col my-3"><a href=""
+                                    class="bg-primary text-white px-md-4 px-lg-3 py-2 rounded-pill">4GB</a>
+                            </div>
+                            <div class="col my-3"><a href=""
+                                    class="bg-primary text-white px-md-4 px-lg-3 py-2 rounded-pill">8GB</a>
+                            </div>
+                            <div class="col my-3"><a href=""
+                                    class="bg-primary text-white px-md-3 px-lg-2 py-2 rounded-pill">16GB</a>
+                            </div>
+                            <div class="col my-3"><a href=""
+                                    class="bg-primary text-white px-md-3 px-lg-2 py-2 rounded-pill">32GB</a>
+                            </div>
+                            <div class="col my-3"><a href=""
+                                    class="bg-primary text-white px-md-3 px-lg-2 py-2 rounded-pill">64GB</a>
+                            </div>
+                            <div class="col my-3"><a href=""
+                                    class="bg-primary text-white px-md-3 px-lg-1 py-2 rounded-pill">128GB</a>
+                            </div>
+                            <div class="col my-3"><a href=""
+                                    class="bg-primary text-white px-md-3 px-lg-1 py-2 rounded-pill">256GB</a>
+                            </div>
+                            <div class="col my-3"><a href=""
+                                    class="bg-primary text-white px-md-3 px-lg-1 py-2 rounded-pill">512GB</a>
+                            </div>
+
+                        </div>
+                        <!-- repeat row end -->
+
+                        <!-- repeat this row multiple times  -->
+                        <div class="row row-cols-md-2 row-cols-lg-3 shadow my-4 rounded-3 p-2">
+                            <h4 class="w-100">Brand</h4>
+                            <div class="col my-3"><a href=""
+                                    class="bg-primary text-white px-md-3 px-lg-3 py-2 rounded-pill">Redmi</a>
+                            </div>
+                            <div class="col my-3"><a href=""
+                                    class="bg-primary text-white px-md-3 px-lg-3 py-2 rounded-pill">Realme</a>
+                            </div>
+                            <div class="col my-3"><a href=""
+                                    class="bg-primary text-white px-md-4 px-lg-3 py-2 rounded-pill">Oppo</a>
+                            </div>
+                            <div class="col my-3"><a href=""
+                                    class="bg-primary text-white px-md-4 px-lg-3 py-2 rounded-pill">Vivo</a>
+                            </div>
+                            <div class="col my-3"><a href=""
+                                    class="bg-primary text-white px-md-4 px-lg-3 py-2 rounded-pill">Vivo</a>
+                            </div>
+                            <div class="col my-3"><a href=""
+                                    class="bg-primary text-white px-md-4 px-lg-3 py-2 rounded-pill">Moto</a>
+                            </div>
+                            <div class="col-lg-3 my-3 "><a href=""
+                                    class="bg-primary text-white px-md-4 px-lg-3 py-2 rounded-pill">1+</a>
+                            </div>
+
+                            <div class="col my-3"><a href=""
+                                    class="bg-primary text-white px-md-4 px-lg-3 py-2 rounded-pill">Apple</a>
+                            </div>
+                            <div class="col my-3"><a href=""
+                                    class="bg-primary text-white px-md-4 px-lg-3 py-2 rounded-pill">Samsung</a>
+                            </div>
+
+                        </div>
+                        <!-- repeat row end -->
+
+                        <!-- .range -->
+                        <div class="row shadow my-4 rounded-3">
+                            <div class="col p-3">
+                                <input class="form-range mb-3" type="range" name="rangeInput1" min="0" max="100000"
+                                    step="5000" onchange="updateTextInput(this.value, 'textInput1');">
+                                <div class="input-group rounded-5">
+                                    <span class="input-group-text">$</span>
+                                    <input class="form-control text-center" type="number" id="textInput1" value="50000"
+                                        step="5000" min="5000" max="100000">
+                                    <span class="input-group-text">.00</span>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- .range end -->
+
+                    </div>
+
+                </div><!-- filter col end -->
+
+                <div class="col " style="height: 90vh; overflow-y: scroll; scroll-behavior: smooth;">
+
+                    <!-- repeat to gen multiple row -->
+                    <div class="container-fluid m-0 p-2">
+                        <div class="row rounded-3 shadow">
+
+                            <div class="col-5 col-sm-3">
+                                <img src="apple.jpg" alt="" height="150px" width="150px">
+
+                                <div class="phone d-sm-block d-md-none">
+                                    <h4 class="text-center">Price : $1</h4>
+                                    <a href="" class="btn btn-primary mt-1 w-100  ">add to cart</a>
+                                </div>
+
+                            </div>
+
+                            <div class=" col-7 col-md-6">
+                                <ul>
+                                    <li>Brand: Redmi</li>
+                                    <li>Ram: 8gb</li>
+                                    <li>Processor: sd 732G</li>
+                                    <li>camera: 108MP + 8MP+8MP+5MP</li>
+                                    <li>camera: 108MP + 8MP+8MP+5MP</li>
+                                    <li>camera: 108MP + 8MP+8MP+5MP</li>
+                                </ul>
+                                <!-- <p class="d-sm-block d-md-none">price:$500</p> -->
+                            </div>
+
+                            <div class="col d-none d-sm-block p-2">
+                                <h4>$500</h4>
+                                <h5><del class="text-muted">$520</del></h5>
+                                <p class="text-secondary">Item left : 15</p>
+                                <div class="mt-2">
+                                    <button class="btn btn-success px-4 mb-2 rounded-3">Buy</button>
+                                    <button class="btn btn-primary  px-4 mb-2">cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- gen row end -->
+
+
+
+                    <!-- repeat to gen multiple row -->
+                    <div class="container-fluid m-0 p-2">
+                        <div class="row rounded-3 shadow">
+
+                            <div class="col-5 col-sm-3">
+                                <img src="apple.jpg" alt="" height="150px" width="150px">
+
+                                <div class="phone d-sm-block d-md-none">
+                                    <h4 class="text-center">Price : $1</h4>
+                                    <a href="" class="btn btn-primary mt-1 w-100  ">add to cart</a>
+                                </div>
+
+                            </div>
+
+                            <div class=" col-7 col-md-6">
+                                <ul>
+                                    <li>Brand: Redmi</li>
+                                    <li>Ram: 8gb</li>
+                                    <li>Processor: sd 732G</li>
+                                    <li>camera: 108MP + 8MP+8MP+5MP</li>
+                                    <li>camera: 108MP + 8MP+8MP+5MP</li>
+                                    <li>camera: 108MP + 8MP+8MP+5MP</li>
+                                </ul>
+                                <!-- <p class="d-sm-block d-md-none">price:$500</p> -->
+                            </div>
+
+                            <div class="col d-none d-sm-block p-2">
+                                <h4>$500</h4>
+                                <h5><del class="text-muted">$520</del></h5>
+                                <p class="text-secondary">Item left : 15</p>
+                                <div class="mt-2">
+                                    <button class="btn btn-success px-4 mb-2 rounded-3">Buy</button>
+                                    <button class="btn btn-primary  px-4 mb-2">cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- gen row end -->
+
+
+
+                    <!-- repeat to gen multiple row -->
+                    <div class="container-fluid m-0 p-2">
+                        <div class="row rounded-3 shadow">
+
+                            <div class="col-5 col-sm-3">
+                                <img src="apple.jpg" alt="" height="150px" width="150px">
+
+                                <div class="phone d-sm-block d-md-none">
+                                    <h4 class="text-center">Price : $1</h4>
+                                    <a href="" class="btn btn-primary mt-1 w-100  ">add to cart</a>
+                                </div>
+
+                            </div>
+
+                            <div class=" col-7 col-md-6">
+                                <ul>
+                                    <li>Brand: Redmi</li>
+                                    <li>Ram: 8gb</li>
+                                    <li>Processor: sd 732G</li>
+                                    <li>camera: 108MP + 8MP+8MP+5MP</li>
+                                    <li>camera: 108MP + 8MP+8MP+5MP</li>
+                                    <li>camera: 108MP + 8MP+8MP+5MP</li>
+                                </ul>
+                                <!-- <p class="d-sm-block d-md-none">price:$500</p> -->
+                            </div>
+
+                            <div class="col d-none d-sm-block p-2">
+                                <h4>$500</h4>
+                                <h5><del class="text-muted">$520</del></h5>
+                                <p class="text-secondary">Item left : 15</p>
+                                <div class="mt-2">
+                                    <button class="btn btn-success px-4 mb-2 rounded-3">Buy</button>
+                                    <button class="btn btn-primary  px-4 mb-2">cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- gen row end -->
+
+
+
+                    <!-- repeat to gen multiple row -->
+                    <div class="container-fluid m-0 p-2">
+                        <div class="row rounded-3 shadow">
+
+                            <div class="col-5 col-sm-3">
+                                <img src="apple.jpg" alt="" height="150px" width="150px">
+
+                                <div class="phone d-sm-block d-md-none">
+                                    <h4 class="text-center">Price : $1</h4>
+                                    <a href="" class="btn btn-primary mt-1 w-100  ">add to cart</a>
+                                </div>
+
+                            </div>
+
+                            <div class=" col-7 col-md-6">
+                                <ul>
+                                    <li>Brand: Redmi</li>
+                                    <li>Ram: 8gb</li>
+                                    <li>Processor: sd 732G</li>
+                                    <li>camera: 108MP + 8MP+8MP+5MP</li>
+                                    <li>camera: 108MP + 8MP+8MP+5MP</li>
+                                    <li>camera: 108MP + 8MP+8MP+5MP</li>
+                                </ul>
+                                <!-- <p class="d-sm-block d-md-none">price:$500</p> -->
+                            </div>
+
+                            <div class="col d-none d-sm-block p-2">
+                                <h4>$500</h4>
+                                <h5><del class="text-muted">$520</del></h5>
+                                <p class="text-secondary">Item left : 15</p>
+                                <div class="mt-2">
+                                    <button class="btn btn-success px-4 mb-2 rounded-3">Buy</button>
+                                    <button class="btn btn-primary  px-4 mb-2">cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- gen row end -->
+
+
+
+                    <!-- repeat to gen multiple row -->
+                    <div class="container-fluid m-0 p-2">
+                        <div class="row rounded-3 shadow">
+
+                            <div class="col-5 col-sm-3">
+                                <img src="apple.jpg" alt="" height="150px" width="150px">
+
+                                <div class="phone d-sm-block d-md-none">
+                                    <h4 class="text-center">Price : $1</h4>
+                                    <a href="" class="btn btn-primary mt-1 w-100  ">add to cart</a>
+                                </div>
+
+                            </div>
+
+                            <div class=" col-7 col-md-6">
+                                <ul>
+                                    <li>Brand: Redmi</li>
+                                    <li>Ram: 8gb</li>
+                                    <li>Processor: sd 732G</li>
+                                    <li>camera: 108MP + 8MP+8MP+5MP</li>
+                                    <li>camera: 108MP + 8MP+8MP+5MP</li>
+                                    <li>camera: 108MP + 8MP+8MP+5MP</li>
+                                </ul>
+                                <!-- <p class="d-sm-block d-md-none">price:$500</p> -->
+                            </div>
+
+                            <div class="col d-none d-sm-block p-2">
+                                <h4>$500</h4>
+                                <h5><del class="text-muted">$520</del></h5>
+                                <p class="text-secondary">Item left : 15</p>
+                                <div class="mt-2">
+                                    <button class="btn btn-success px-4 mb-2 rounded-3">Buy</button>
+                                    <button class="btn btn-primary  px-4 mb-2">cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- gen row end -->
+
+
+
+                    <!-- repeat to gen multiple row -->
+                    <div class="container-fluid m-0 p-2">
+                        <div class="row rounded-3 shadow">
+
+                            <div class="col-5 col-sm-3">
+                                <img src="apple.jpg" alt="" height="150px" width="150px">
+
+                                <div class="phone d-sm-block d-md-none">
+                                    <h4 class="text-center">Price : $1</h4>
+                                    <a href="" class="btn btn-primary mt-1 w-100  ">add to cart</a>
+                                </div>
+
+                            </div>
+
+                            <div class=" col-7 col-md-6">
+                                <ul>
+                                    <li>Brand: Redmi</li>
+                                    <li>Ram: 8gb</li>
+                                    <li>Processor: sd 732G</li>
+                                    <li>camera: 108MP + 8MP+8MP+5MP</li>
+                                    <li>camera: 108MP + 8MP+8MP+5MP</li>
+                                    <li>camera: 108MP + 8MP+8MP+5MP</li>
+                                </ul>
+                                <!-- <p class="d-sm-block d-md-none">price:$500</p> -->
+                            </div>
+
+                            <div class="col d-none d-sm-block p-2">
+                                <h4>$500</h4>
+                                <h5><del class="text-muted">$520</del></h5>
+                                <p class="text-secondary">Item left : 15</p>
+                                <div class="mt-2">
+                                    <button class="btn btn-success px-4 mb-2 rounded-3">Buy</button>
+                                    <button class="btn btn-primary  px-4 mb-2">cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- gen row end -->
+
+
+
+
+
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+
+    </body>
+
+</html>
