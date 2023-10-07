@@ -43,19 +43,21 @@
                         </li>
 
                         <li class="nav-item ms-md-4">
-                            <a class="nav-link" href="#">username</a>
+                            <a class="nav-link" href="#">{{request.user}}</a>
                         </li>
                         <li class="nav-item">
 
                             <div class="dropdown">
                                 <button class="btn btn-default dropdown-toggle" type="button" id="menu1"
                                     data-bs-toggle="dropdown">
-                                    <img class="rounded-circle" src="https://i.stack.imgur.com/KKhkr.png?s=128&g=1"
-                                        height="30px" width="30px">
+                                    <img class="rounded-circle m-0 p-0" src={{request.user.avatar.url}} height="30px"
+                                        width="30px">
                                 </button>
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                                    <li><a class="dropdown-item me-3" href="#">setting</a></li>
-                                    <li><a class="dropdown-item me-3" href="#">log out</a></li>
+                                    <li><a class="dropdown-item" href="#">setting</a></li>
+                                    <hr>
+                                    <li><a class="dropdown-item " href="{% url 'login' %}">log in</a></li>
+                                    <li><a class="dropdown-item " href="{% url 'logout' %}">log out</a></li>
 
                                 </ul>
                             </div>
