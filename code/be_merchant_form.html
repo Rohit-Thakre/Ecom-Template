@@ -67,22 +67,23 @@
             <div class="card text-center">
                 <h5 class="card-header p-3">Merchant Details</h5>
                 <div class="card-body">
-                    <form action="" method="post">
-                        <!-- {% csrf_token %} -->
-                        <input type="file" id="myFile" name="filename" class="form-control my-4 p-3 ">
+                    <form action="" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <input type="file" id="myFile" name="avatar" class="form-control my-4 p-3 ">
 
 
                         <div class="row  row-cols-1 row-cols-md-2">
                             <div class="col">
                                 <div class="form-check ">
-                                    <input class="form-check-input " type="radio" name="merchant" id="merchant">
+                                    <input class="form-check-input " type="radio" name="merchant" id="merchant"
+                                        value="True">
                                     <label class="form-check-label" for="merchant">
                                         Be Merchant
                                     </label>
                                 </div>
                                 <div class="form-check ">
                                     <input class="form-check-input" type="radio" name="merchant" id="normal_user"
-                                        checked>
+                                        checked value="False">
                                     <label class="form-check-label" for="normal_user">
                                         Normal User
                                     </label>
@@ -92,7 +93,7 @@
                             <div class="col ">
                                 <input type="number" class="form-control mt-3 mt-md-0" name="age"
                                     placeholder="Enter Age here...">
-                                <input type="number" class="form-control mt-3" name="age"
+                                <input type="number" class="form-control mt-3" name="phone"
                                     placeholder="Phone Number here...">
                             </div>
 
@@ -118,14 +119,9 @@
 
 
 
-
-
-
-
-
-
                         <a href=" #" class="btn btn-danger mt-4 mx-2 px-5 py-2" type=>Discard</a>
-                        <a href="#" class="btn btn-primary mt-4 mx-2  px-5 py-2" type="submit">Upload</a>
+                        <!-- <a href="#" class="btn btn-primary mt-4 mx-2  px-5 py-2" type="submit">Save</a> -->
+                        <input type="submit" value="Save" class=" btn btn-primary mt-4 mx-2 px-5 py-2">
 
                     </form>
                 </div>
