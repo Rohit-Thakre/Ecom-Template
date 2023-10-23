@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
             integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
             crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <title>Review Form</title>
+        <title>Product Form</title>
     </head>
 
     <body>
@@ -68,15 +68,19 @@
                 <h5 class="card-header p-3">Product Details</h5>
                 <div class="card-body">
                     <form action="" method="post">
+                        {% csrf_token %}
+                        <label for="product_name" class="form-label float-start">Product Name..</label>
                         <input type="text" class=" form-control p-2" placeholder="Product Name..." name="product_name">
 
                         <div class="row mt-4">
                             <div class="col">
+                                <label for="category" class="form-label float-start">Category</label>
                                 <input class="form-control p-2" list="category_list" name="category" id="category"
                                     placeholder=" Select Category">
                             </div>
 
                             <div class="col">
+                                <label for="stock" class="form-label float-start">Stock..</label>
                                 <input class="form-control p-2" type="number" name="stock" id=""
                                     placeholder="Stock Available">
                             </div>
@@ -84,33 +88,39 @@
 
 
                         <div class="row my-4">
-                            <div class="col"><input class="form-control  p-2" type="number" name="mrp" id=""
+                            <div class="col">
+                                <label for="mrp" class="form-label float-start">Max Retail Price</label>
+                                <input class="form-control  p-2" type="number" name="mrp" id=""
                                     placeholder="Max Retail Price..">
                             </div>
 
                             <div class="col">
+                                <label for="selling_price" class="form-label float-start">Selling Price</label>
                                 <input class="form-control  p-2" type="number" name="selling_price" id=""
                                     placeholder="Selling Price..">
                             </div>
                         </div>
 
                         <datalist id="category_list">
-                            <option value="Mobile">
-                            <option value="Lapto">
-                            <option value="Grocery">
-                            <option value="Fashion">
-                                <!-- <option value=""> -->
+
+                            {% for item in category_list %}
+                            <option value="{{item}}">
+                                {% endfor %}
+
                         </datalist>
 
 
+                        <label for="img" class="form-label float-start">Product Image</label>
+                        <input type="file" id="myFile" name="img" class="form-control my-4 p-3 ">
 
-                        <input type="file" id="myFile" name="filename" class="form-control my-4 p-3 ">
-
-                        <textarea name="" id="" cols="30" rows="10" class="form-control mt-4 p-3"
+                        <label for="description" class="form-label float-start">Description</label>
+                        <textarea name="description" id="" cols="30" rows="10" class="form-control mt-4 p-3"
                             placeholder="Write your description here..."></textarea>
 
-                        <a href=" #" class="btn btn-danger mt-4 mx-2 px-5 py-2" type=>Discard</a>
-                        <a href="#" class="btn btn-primary mt-4 mx-2  px-5 py-2" type="submit">Upload</a>
+                        <!-- <a href=" #" class="btn btn-danger mt-4 mx-2 px-5 py-2">Discard</a>
+                        <a href="#" class="btn btn-primary mt-4 mx-2  px-5 py-2" type="submit">Upload</a> -->
+                        <button class="btn btn-danger mt-4 mx-2 px-5 py-2">Discard</button>
+                        <button type="submit" class="btn btn-primary mt-4 mx-2  px-5 py-2">Save</button>
 
                     </form>
                 </div>
