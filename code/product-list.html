@@ -183,11 +183,14 @@
                 <div class="col " style="height: 90vh; overflow-y: scroll; scroll-behavior: smooth;">
 
                     <!-- repeat to gen multiple row -->
+
+                    {% for product in products %}
+
                     <div class="container-fluid m-0 p-2">
                         <div class="row rounded-3 shadow">
 
                             <div class="col-5 col-sm-3">
-                                <img src="apple.jpg" alt="" height="150px" width="150px">
+                                <img src="{{product.image.url}}" alt="" height="150px" width="150px">
 
                                 <div class="phone d-sm-block d-md-none">
                                     <h4 class="text-center">Price : $1</h4>
@@ -197,11 +200,11 @@
                             </div>
 
                             <div class=" col-7 col-md-6">
+                                <h3>{{product.name}}</h3>
                                 <ul>
                                     <li>Brand: Redmi</li>
                                     <li>Ram: 8gb</li>
                                     <li>Processor: sd 732G</li>
-                                    <li>camera: 108MP + 8MP+8MP+5MP</li>
                                     <li>camera: 108MP + 8MP+8MP+5MP</li>
                                     <li>camera: 108MP + 8MP+8MP+5MP</li>
                                 </ul>
@@ -209,221 +212,22 @@
                             </div>
 
                             <div class="col d-none d-sm-block p-2">
-                                <h4>$500</h4>
-                                <h5><del class="text-muted">$520</del></h5>
+                                <h4>{{product.current_price}}</h4>
+                                <h5><del class="text-muted">{{product.max_price}}</del></h5>
                                 <p class="text-secondary">Item left : 15</p>
                                 <div class="mt-2">
-                                    <button class="btn btn-success px-4 mb-2 rounded-3">Buy</button>
-                                    <button class="btn btn-primary  px-4 mb-2">cart</button>
+                                    <!-- <button class="btn btn-success px-4 mb-2 rounded-3">Buy</button>
+                                    <button class="btn btn-primary  px-4 mb-2">cart</button> -->
+                                    <a href="{% url 'product' product.id %}"
+                                        class="btn btn-success px-4 mb-2 rounded-3">Buy</a>
+                                    <a href="{% url 'add_to_cart' product.id %}"
+                                        class="btn btn-primary px-4 mb-2 rounded-3">Cart</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- gen row end -->
+                    {% endfor %}
 
-
-
-                    <!-- repeat to gen multiple row -->
-                    <div class="container-fluid m-0 p-2">
-                        <div class="row rounded-3 shadow">
-
-                            <div class="col-5 col-sm-3">
-                                <img src="apple.jpg" alt="" height="150px" width="150px">
-
-                                <div class="phone d-sm-block d-md-none">
-                                    <h4 class="text-center">Price : $1</h4>
-                                    <a href="" class="btn btn-primary mt-1 w-100  ">add to cart</a>
-                                </div>
-
-                            </div>
-
-                            <div class=" col-7 col-md-6">
-                                <ul>
-                                    <li>Brand: Redmi</li>
-                                    <li>Ram: 8gb</li>
-                                    <li>Processor: sd 732G</li>
-                                    <li>camera: 108MP + 8MP+8MP+5MP</li>
-                                    <li>camera: 108MP + 8MP+8MP+5MP</li>
-                                    <li>camera: 108MP + 8MP+8MP+5MP</li>
-                                </ul>
-                                <!-- <p class="d-sm-block d-md-none">price:$500</p> -->
-                            </div>
-
-                            <div class="col d-none d-sm-block p-2">
-                                <h4>$500</h4>
-                                <h5><del class="text-muted">$520</del></h5>
-                                <p class="text-secondary">Item left : 15</p>
-                                <div class="mt-2">
-                                    <button class="btn btn-success px-4 mb-2 rounded-3">Buy</button>
-                                    <button class="btn btn-primary  px-4 mb-2">cart</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- gen row end -->
-
-
-
-                    <!-- repeat to gen multiple row -->
-                    <div class="container-fluid m-0 p-2">
-                        <div class="row rounded-3 shadow">
-
-                            <div class="col-5 col-sm-3">
-                                <img src="apple.jpg" alt="" height="150px" width="150px">
-
-                                <div class="phone d-sm-block d-md-none">
-                                    <h4 class="text-center">Price : $1</h4>
-                                    <a href="" class="btn btn-primary mt-1 w-100  ">add to cart</a>
-                                </div>
-
-                            </div>
-
-                            <div class=" col-7 col-md-6">
-                                <ul>
-                                    <li>Brand: Redmi</li>
-                                    <li>Ram: 8gb</li>
-                                    <li>Processor: sd 732G</li>
-                                    <li>camera: 108MP + 8MP+8MP+5MP</li>
-                                    <li>camera: 108MP + 8MP+8MP+5MP</li>
-                                    <li>camera: 108MP + 8MP+8MP+5MP</li>
-                                </ul>
-                                <!-- <p class="d-sm-block d-md-none">price:$500</p> -->
-                            </div>
-
-                            <div class="col d-none d-sm-block p-2">
-                                <h4>$500</h4>
-                                <h5><del class="text-muted">$520</del></h5>
-                                <p class="text-secondary">Item left : 15</p>
-                                <div class="mt-2">
-                                    <button class="btn btn-success px-4 mb-2 rounded-3">Buy</button>
-                                    <button class="btn btn-primary  px-4 mb-2">cart</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- gen row end -->
-
-
-
-                    <!-- repeat to gen multiple row -->
-                    <div class="container-fluid m-0 p-2">
-                        <div class="row rounded-3 shadow">
-
-                            <div class="col-5 col-sm-3">
-                                <img src="apple.jpg" alt="" height="150px" width="150px">
-
-                                <div class="phone d-sm-block d-md-none">
-                                    <h4 class="text-center">Price : $1</h4>
-                                    <a href="" class="btn btn-primary mt-1 w-100  ">add to cart</a>
-                                </div>
-
-                            </div>
-
-                            <div class=" col-7 col-md-6">
-                                <ul>
-                                    <li>Brand: Redmi</li>
-                                    <li>Ram: 8gb</li>
-                                    <li>Processor: sd 732G</li>
-                                    <li>camera: 108MP + 8MP+8MP+5MP</li>
-                                    <li>camera: 108MP + 8MP+8MP+5MP</li>
-                                    <li>camera: 108MP + 8MP+8MP+5MP</li>
-                                </ul>
-                                <!-- <p class="d-sm-block d-md-none">price:$500</p> -->
-                            </div>
-
-                            <div class="col d-none d-sm-block p-2">
-                                <h4>$500</h4>
-                                <h5><del class="text-muted">$520</del></h5>
-                                <p class="text-secondary">Item left : 15</p>
-                                <div class="mt-2">
-                                    <button class="btn btn-success px-4 mb-2 rounded-3">Buy</button>
-                                    <button class="btn btn-primary  px-4 mb-2">cart</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- gen row end -->
-
-
-
-                    <!-- repeat to gen multiple row -->
-                    <div class="container-fluid m-0 p-2">
-                        <div class="row rounded-3 shadow">
-
-                            <div class="col-5 col-sm-3">
-                                <img src="apple.jpg" alt="" height="150px" width="150px">
-
-                                <div class="phone d-sm-block d-md-none">
-                                    <h4 class="text-center">Price : $1</h4>
-                                    <a href="" class="btn btn-primary mt-1 w-100  ">add to cart</a>
-                                </div>
-
-                            </div>
-
-                            <div class=" col-7 col-md-6">
-                                <ul>
-                                    <li>Brand: Redmi</li>
-                                    <li>Ram: 8gb</li>
-                                    <li>Processor: sd 732G</li>
-                                    <li>camera: 108MP + 8MP+8MP+5MP</li>
-                                    <li>camera: 108MP + 8MP+8MP+5MP</li>
-                                    <li>camera: 108MP + 8MP+8MP+5MP</li>
-                                </ul>
-                                <!-- <p class="d-sm-block d-md-none">price:$500</p> -->
-                            </div>
-
-                            <div class="col d-none d-sm-block p-2">
-                                <h4>$500</h4>
-                                <h5><del class="text-muted">$520</del></h5>
-                                <p class="text-secondary">Item left : 15</p>
-                                <div class="mt-2">
-                                    <button class="btn btn-success px-4 mb-2 rounded-3">Buy</button>
-                                    <button class="btn btn-primary  px-4 mb-2">cart</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- gen row end -->
-
-
-
-                    <!-- repeat to gen multiple row -->
-                    <div class="container-fluid m-0 p-2">
-                        <div class="row rounded-3 shadow">
-
-                            <div class="col-5 col-sm-3">
-                                <img src="apple.jpg" alt="" height="150px" width="150px">
-
-                                <div class="phone d-sm-block d-md-none">
-                                    <h4 class="text-center">Price : $1</h4>
-                                    <a href="" class="btn btn-primary mt-1 w-100  ">add to cart</a>
-                                </div>
-
-                            </div>
-
-                            <div class=" col-7 col-md-6">
-                                <ul>
-                                    <li>Brand: Redmi</li>
-                                    <li>Ram: 8gb</li>
-                                    <li>Processor: sd 732G</li>
-                                    <li>camera: 108MP + 8MP+8MP+5MP</li>
-                                    <li>camera: 108MP + 8MP+8MP+5MP</li>
-                                    <li>camera: 108MP + 8MP+8MP+5MP</li>
-                                </ul>
-                                <!-- <p class="d-sm-block d-md-none">price:$500</p> -->
-                            </div>
-
-                            <div class="col d-none d-sm-block p-2">
-                                <h4>$500</h4>
-                                <h5><del class="text-muted">$520</del></h5>
-                                <p class="text-secondary">Item left : 15</p>
-                                <div class="mt-2">
-                                    <button class="btn btn-success px-4 mb-2 rounded-3">Buy</button>
-                                    <button class="btn btn-primary  px-4 mb-2">cart</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <!-- gen row end -->
 
 

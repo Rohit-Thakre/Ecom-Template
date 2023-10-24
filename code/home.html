@@ -109,7 +109,7 @@
                                 class="card-img" alt="..." width="150px" height="250px">
                             <div class="card-body align-items-center">
                                 <h5 class="card-title">Mobiles</h5>
-                                <a href="#" class="btn btn-primary mx-auto w-100">View</a>
+                                <a href="{% url 'category' 'mobile' %}" class="btn btn-primary mx-auto w-100">View</a>
                             </div>
                         </div>
                     </div>
@@ -122,7 +122,7 @@
                                 class="card-img" alt="..." width="150px" height="250px">
                             <div class="card-body align-items-center">
                                 <h5 class="card-title">Laptops</h5>
-                                <a href="#" class="btn btn-primary w-100">View</a>
+                                <a href="{% url 'category' 'laptop' %}" class="btn btn-primary w-100">View</a>
                             </div>
                         </div>
                     </div>
@@ -135,7 +135,7 @@
                                 class=" card-img" alt="..." width="150px" height="250px">
                             <div class="card-body align-items-center">
                                 <h5 class="card-title">Appliances</h5>
-                                <a href="#" class="btn btn-primary w-100">View</a>
+                                <a href="{% url 'category' 'appliances' %}" class="btn btn-primary w-100">View</a>
                             </div>
                         </div>
                     </div>
@@ -148,7 +148,7 @@
                                 class="card-img" alt="..." width="150px" height="250px">
                             <div class="card-body align-items-center">
                                 <h5 class="card-title">Grocery</h5>
-                                <a href="#" class="btn btn-primary w-100">View</a>
+                                <a href="{% url 'category' 'grocery' %}" class="btn btn-primary w-100">View</a>
                             </div>
                         </div>
                     </div>
@@ -167,19 +167,20 @@
                     <hr>
                     <ul style="list-style-type: none;" class="">
                         <li>
-                            <a href="" class="btn btn-primary w-100 my-2 p-3 ">Mobiles</a>
+                            <a href="{% url 'category'  'mobile' %}" class="btn btn-primary w-100 my-2 p-3 ">Mobiles</a>
                         </li>
                         <li>
-                            <a href="" class="btn btn-primary w-100 my-2 p-3">Laptops</a>
+                            <a href="{% url 'category' 'laptop' %}" class="btn btn-primary w-100 my-2 p-3">Laptops</a>
                         </li>
                         <li>
-                            <a href="" class="btn btn-primary w-100 my-2 p-3">Electronic</a>
+                            <a href="{% url 'category' 'electronics' %}"
+                                class="btn btn-primary w-100 my-2 p-3">Electronic</a>
                         </li>
                         <li>
-                            <a href="" class="btn btn-primary w-100 my-2 p-3">Fashion</a>
+                            <a href="{% url 'category' 'fashion' %}" class="btn btn-primary w-100 my-2 p-3">Fashion</a>
                         </li>
                         <li>
-                            <a href="" class="btn btn-primary w-100 my-2 p-3">Beauty</a>
+                            <a href="{% url 'category' 'beauty' %}" class="btn btn-primary w-100 my-2 p-3">Beauty</a>
                         </li>
 
                     </ul>
@@ -190,87 +191,23 @@
                     <div class="container m-0 p-0">
                         <div class="row  row-cols-md-4 row-cols-2 g-3">
 
-                            <div class="col">
-                                <div class="card shadow">
-                                    <img src="apple.jpg" class="card-img h-75 w-75" alt="...">
-                                    <div class="card-body align-items-center">
-                                        <h5 class="card-title">Mobiles</h5>
-                                        <a href="#" class="btn btn-primary mx-auto w-100 ">add to cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card shadow">
-                                    <img src="apple.jpg" class="card-img h-75 w-75" alt="...">
-                                    <div class="card-body align-items-center">
-                                        <h5 class="card-title">Mobiles</h5>
-                                        <a href="#" class="btn btn-primary mx-auto w-100 ">add to cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card shadow">
-                                    <img src="apple.jpg" class="card-img h-75 w-75" alt="...">
-                                    <div class="card-body align-items-center">
-                                        <h5 class="card-title">Mobiles</h5>
-                                        <a href="#" class="btn btn-primary mx-auto w-100 ">add to cart</a>
-                                    </div>
-                                </div>
-                            </div>
+
+                            {% for product in products %}
 
                             <div class="col">
                                 <div class="card shadow">
-                                    <img src="apple.jpg" class="card-img h-75 w-75" alt="...">
+                                    <img src="{{product.image.url}}" class="card-img" alt="..."
+                                        style="height: 200px; width: 190px;">
+
                                     <div class="card-body align-items-center">
-                                        <h5 class="card-title">Mobiles</h5>
-                                        <a href="#" class="btn btn-primary w-100 ">add to cart</a>
+                                        <h6 class="card-title " style="height: 50px;">{{product.name}}</h6>
+                                        <a href="{% url 'product' product.id %}"
+                                            class="btn btn-primary mx-auto w-100 ">View</a>
                                     </div>
                                 </div>
                             </div>
+                            {% endfor %}
 
-
-                            <div class="col">
-                                <div class="card shadow">
-                                    <img src="apple.jpg" class="card-img h-75 w-75" alt="...">
-                                    <div class="card-body align-items-center">
-                                        <h5 class="card-title">Mobiles</h5>
-                                        <a href="#" class="btn btn-primary w-100 ">add to cart</a>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="col">
-                                <div class="card shadow">
-                                    <img src="apple.jpg" class="card-img h-75 w-75" alt="...">
-                                    <div class="card-body align-items-center">
-                                        <h5 class="card-title">Mobiles</h5>
-                                        <a href="#" class="btn btn-primary w-100 ">add to cart</a>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="col">
-                                <div class="card shadow">
-                                    <img src="apple.jpg" class="card-img h-75 w-75" alt="...">
-                                    <div class="card-body align-items-center">
-                                        <h5 class="card-title">Mobiles</h5>
-                                        <a href="#" class="btn btn-primary w-100 ">add to cart</a>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="col">
-                                <div class="card shadow">
-                                    <img src="apple.jpg" class="card-img h-75 w-75" alt="...">
-                                    <div class="card-body align-items-center">
-                                        <h5 class="card-title">Mobiles</h5>
-                                        <a href="#" class="btn btn-primary w-100 ">add to cart</a>
-                                    </div>
-                                </div>
-                            </div>
 
                         </div>
                     </div>
