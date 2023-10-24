@@ -96,18 +96,18 @@
 
                         <p>
                             <a href="" class=" bg-primary text-light text-decoration-none p-2 rounded-3 me-2">
-                                <i class="fa-solid fa-thumbs-up">545+</i>
+                                <i class="fa-solid fa-thumbs-up">{{product.likes}}+</i>
                             </a>
 
                             <a href="" class=" bg-danger text-light text-decoration-none p-2 rounded-3 me-2">
-                                <i class="fa-solid fa-thumbs-down"> 10+</i>
+                                <i class="fa-solid fa-thumbs-down"> {{product.dislikes}}+</i>
                             </a>
                         </p>
                         <p>Total Orders : <span>10054+</span></p>
 
 
-                        <h1>Product Name</h1>
-                        <p class="">Catergory </p>
+                        <h1>{{product.name}}</h1>
+                        <p class="">{{product.category}} </p>
                         <p>Rating : <span> 3.5/5</span><br>
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
@@ -118,11 +118,13 @@
                         </p>
                         <h5 class="mt-2">
                             <!-- <span class="badge bg-primary p-2">New <i class="fa-regular fa-star"></i></span> -->
-                            <span class="badge bg-danger p-2">-10% off </i></span>
+                            <span class="badge bg-danger p-2"> {{off}} off
+                                </i></span>
                         </h5>
-                        <p><span style="text-decoration: line-through;">$00.00</span>
+                        <p><span style="text-decoration: line-through;">{{product.max_price}}</span>
                             <!-- <span style="">$00.00</span> -->
-                            <strong style="font-size: larger; color: rgba(255, 0, 0, 0.916);">$00.00</strong>
+                            <strong
+                                style="font-size: larger; color: rgba(255, 0, 0, 0.916);">{{product.current_price}}</strong>
                         </p>
 
                         <!-- <input class="" type="number" name="" id="" value="1"> -->
@@ -151,35 +153,11 @@
             <div class="row">
                 <h1>Description</h1>
                 <div class="col-sm-12 col-md-6">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Enim, sapiente vel saepe facere
-                    fugiat maxime! Magnam commodi numquam beatae facere sed nulla culpa minima natus, nostrum molestiae
-                    nemo
-                    officia dignissimos rerum non voluptatibus iure esse ea velit molestias animi consectetur illum
-                    cumque
-                    quos. Libero commodi corrupti aliquam at inventore culpa velit maxime nostrum eum omnis, debitis qui
-                    quibusdam rerum voluptate maiores voluptatem assumenda. Hic aut optio quidem magni cupiditate.
-                    Ratione
-                    explicabo a vel quo praesentium dolorem recusandae nostrum sed reiciendis quod. Id illum, numquam
-                    ratione nisi, magni distinctio impedit provident itaque porro excepturi animi sit eligendi, magnam
-                    sed
-                    libero saepe?
+                    {{product.description}}
                 </div>
 
                 <div class="col-sm-12 col-md-6">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Enim, sapiente vel saepe facere
-                    fugiat maxime! Magnam commodi numquam beatae facere sed nulla culpa minima natus, nostrum molestiae
-                    nemo
-                    officia dignissimos rerum non voluptatibus iure esse ea velit molestias animi consectetur illum
-                    cumque
-                    quos. Libero commodi corrupti aliquam at inventore culpa velit maxime nostrum eum omnis, debitis qui
-                    quibusdam rerum voluptate maiores voluptatem assumenda. Hic aut optio quidem magni cupiditate.
-                    Ratione
-                    explicabo a vel quo praesentium dolorem recusandae nostrum sed reiciendis quod. Id illum, numquam
-                    ratione nisi, magni distinctio impedit provident itaque porro excepturi animi sit eligendi, magnam
-                    sed
-                    libero saepe?
+                    {{product.description}}
                 </div>
             </div> <!-- description row end -->
 
@@ -196,10 +174,16 @@
                     Camera</div>
             </div> -->
             <!-- rating end -->
+
             <!-- review start -->
-            <div class="review" style="height: 100vh; overflow-y: scroll; scroll-behavior: smooth; overflow-x: hidden;">
+
+
+
+
+            <div class="review" style="height: 110vh; overflow-y: scroll; scroll-behavior: smooth; overflow-x: hidden;">
                 <h3 class="text-center m-5">Review</h3>
 
+                {% for review in reviews %}
                 <div class="row my-4 bg-light p-3">
                     <div class="col ">
                         <div class="container-fluid m-0 p-0">
@@ -220,17 +204,21 @@
                         </div>
                     </div>
                     <div class="col offset-1">
-                        <p> <img src="" alt="" height="25px" width="25px" class="bg-primary rounded-circle">
-                            Username</p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur consequuntur
-                        culpa quisquam blanditiis obcaecati nesciunt nostrum error quasi deleniti sunt. Autem sit, ad
-                        cupiditate quis unde optio soluta harum aperiam fuga dolores, odit voluptatem corporis facilis
-                        sed
-                        tempore tenetur quas fugit, dignissimos magni animi quo suscipit blanditiis voluptatum. At,
-                        excepturi.
+                        <p> <img src="{{review.user.avatar.url}}" alt="" height="25px" width="25px"
+                                class="bg-primary rounded-circle">
+                            {{review.user.username}}
+                            <span class="float-end">
+                                LIKE: {{review.likes}}
+                                <br>
+                                DisLike: {{review.dislikes}}</span>
+                        </p>
+
+                        <p>{{review.text}}</p>
                     </div>
                 </div>
+                {% endfor %}
             </div>
+
 
             <!-- review end -->
 
