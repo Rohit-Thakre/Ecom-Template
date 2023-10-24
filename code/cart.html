@@ -100,8 +100,10 @@
                             <td>{{item.product.current_price}}</td>
 
                             <td>
-                                <a href="" class="btn btn-primary  w-75 p-1 my-1">Buy</a>
-                                <a href="" class="btn btn-danger w-75 p-1 my-1">Remove</a>
+                                <a href="{% url 'product' item.product.id %}"
+                                    class="btn btn-primary  w-75 p-1 my-1">Buy</a>
+                                <a href="{% url 'remove_from_cart' item.product.id %}"
+                                    class="btn btn-danger w-75 p-1 my-1">Remove</a>
                             </td>
                         </tr>
                         {% endfor %}
