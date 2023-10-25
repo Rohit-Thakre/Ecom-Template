@@ -170,21 +170,22 @@ product-view
     <!-- review end -->
 
     <!-- prduct start -->
-    <div class="row  row-cols-md-4 row-cols-2 g-3">
+    <div class="row  row-cols-md-5 row-cols-2 g-4   ">
 
         {% for product in products %}
 
         <div class="col">
             <div class="card shadow">
-                <img src="{{product.image.url}}" class="card-img" alt="..." style="height: 200px; width: 190px;">
+                <img src="{{product.image.url}}" class="card-img" alt="..." style="height: 200px; width: 180px;">
 
                 <div class="card-body align-items-center">
-                    <h6 class="card-title " style="height: 50px;">{{product.name}}</h6>
+                    <h6 class="card-title " style="height: 40px;">{{product.name}}</h6>
                     <a href="{% url 'product' product.id %}" class="btn btn-primary mx-auto w-100 ">View</a>
                 </div>
             </div>
         </div>
         {% endfor %}
+
 
 
     </div> <!-- container end  -->
