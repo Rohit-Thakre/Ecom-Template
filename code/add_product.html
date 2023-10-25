@@ -1,142 +1,85 @@
-<!doctype html>
-<html lang="en">
+{% extends 'base.html' %}
 
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <!-- Bootstrap CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+{% block title %}
+add product
+{% endblock title %}
 
 
-        <!-- font awesome icon -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-            integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-            crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <title>Product Form</title>
-    </head>
 
-    <body>
+{% block content %}
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-sm-top ">
-            <div class="container">
-                <a href="" class="navbar-brand">LOGO</a>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
 
-                <div class="collapse navbar-collapse text-center justify-content-end" id="navbarSupportedContent">
-                    <form class="">
-                        <input class="form-control " type="search" placeholder="Search" aria-label="Search">
-                    </form>
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"> <i class="fa-solid fa-cart-plus fa-shake fa-xl"
-                                    style="color: white;"></i></a>
-                        </li>
+<div class="container mt-4 w-sm-75">
+    {% if  show %}
+    <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+        <strong>{{msg}}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endif %}
+    <div class="card text-center">
+        <h5 class="card-header p-3">Product Details</h5>
+        <div class="card-body">
+            <form action="" method="post">
+                {% csrf_token %}
+                <label for="product_name" class="form-label float-start">Product Name..</label>
+                <input type="text" class=" form-control p-2" placeholder="Product Name..." name="product_name">
 
-                        <li class="nav-item ms-md-4">
-                            <a class="nav-link" href="#">username</a>
-                        </li>
-                        <li class="nav-item">
+                <div class="row mt-4">
+                    <div class="col">
+                        <label for="category" class="form-label float-start">Category</label>
+                        <input class="form-control p-2" list="category_list" name="category" id="category"
+                            placeholder=" Select Category">
+                    </div>
 
-                            <div class="dropdown">
-                                <button class="btn btn-default dropdown-toggle" type="button" id="menu1"
-                                    data-bs-toggle="dropdown">
-                                    <img class="rounded-circle" src="https://i.stack.imgur.com/KKhkr.png?s=128&g=1"
-                                        height="30px" width="30px">
-                                </button>
-                                <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                                    <li><a class="dropdown-item me-3" href="#">setting</a></li>
-                                    <li><a class="dropdown-item me-3" href="#">log out</a></li>
-
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-
+                    <div class="col">
+                        <label for="stock" class="form-label float-start">Stock..</label>
+                        <input class="form-control p-2" type="number" name="stock" id="" placeholder="Stock Available">
+                    </div>
                 </div>
-        </nav>
-        <div class="container mt-4 w-sm-75">
-
-            <div class="card text-center">
-                <h5 class="card-header p-3">Product Details</h5>
-                <div class="card-body">
-                    <form action="" method="post">
-                        {% csrf_token %}
-                        <label for="product_name" class="form-label float-start">Product Name..</label>
-                        <input type="text" class=" form-control p-2" placeholder="Product Name..." name="product_name">
-
-                        <div class="row mt-4">
-                            <div class="col">
-                                <label for="category" class="form-label float-start">Category</label>
-                                <input class="form-control p-2" list="category_list" name="category" id="category"
-                                    placeholder=" Select Category">
-                            </div>
-
-                            <div class="col">
-                                <label for="stock" class="form-label float-start">Stock..</label>
-                                <input class="form-control p-2" type="number" name="stock" id=""
-                                    placeholder="Stock Available">
-                            </div>
-                        </div>
 
 
-                        <div class="row my-4">
-                            <div class="col">
-                                <label for="mrp" class="form-label float-start">Max Retail Price</label>
-                                <input class="form-control  p-2" type="number" name="mrp" id=""
-                                    placeholder="Max Retail Price..">
-                            </div>
+                <div class="row my-4">
+                    <div class="col">
+                        <label for="mrp" class="form-label float-start">Max Retail Price</label>
+                        <input class="form-control  p-2" type="number" name="mrp" id=""
+                            placeholder="Max Retail Price..">
+                    </div>
 
-                            <div class="col">
-                                <label for="selling_price" class="form-label float-start">Selling Price</label>
-                                <input class="form-control  p-2" type="number" name="selling_price" id=""
-                                    placeholder="Selling Price..">
-                            </div>
-                        </div>
+                    <div class="col">
+                        <label for="selling_price" class="form-label float-start">Selling Price</label>
+                        <input class="form-control  p-2" type="number" name="selling_price" id=""
+                            placeholder="Selling Price..">
+                    </div>
+                </div>
 
-                        <datalist id="category_list">
+                <datalist id="category_list">
 
-                            {% for item in category_list %}
-                            <option value="{{item}}">
-                                {% endfor %}
+                    {% for item in category_list %}
+                    <option value="{{item}}">
+                        {% endfor %}
 
-                        </datalist>
+                </datalist>
 
 
-                        <label for="img" class="form-label float-start">Product Image</label>
-                        <input type="file" id="myFile" name="img" class="form-control my-4 p-3 ">
+                <label for="img" class="form-label float-start">Product Image</label>
+                <input type="file" id="myFile" name="img" class="form-control my-4 p-3 ">
 
-                        <label for="description" class="form-label float-start">Description</label>
-                        <textarea name="description" id="" cols="30" rows="10" class="form-control mt-4 p-3"
-                            placeholder="Write your description here..."></textarea>
+                <label for="description" class="form-label float-start">Description</label>
+                <textarea name="description" id="" cols="30" rows="10" class="form-control mt-4 p-3"
+                    placeholder="Write your description here..."></textarea>
 
-                        <!-- <a href=" #" class="btn btn-danger mt-4 mx-2 px-5 py-2">Discard</a>
+                <!-- <a href=" #" class="btn btn-danger mt-4 mx-2 px-5 py-2">Discard</a>
                         <a href="#" class="btn btn-primary mt-4 mx-2  px-5 py-2" type="submit">Upload</a> -->
-                        <button class="btn btn-danger mt-4 mx-2 px-5 py-2">Discard</button>
-                        <button type="submit" class="btn btn-primary mt-4 mx-2  px-5 py-2">Save</button>
+                <button class="btn btn-danger mt-4 mx-2 px-5 py-2">Discard</button>
+                <button type="submit" class="btn btn-primary mt-4 mx-2  px-5 py-2">Save</button>
 
-                    </form>
-                </div>
-            </div>
-
-
+            </form>
         </div>
+    </div>
 
 
+</div>
 
 
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-            crossorigin="anonymous"></script>
-
-    </body>
-
-</html>
+{% endblock content %}

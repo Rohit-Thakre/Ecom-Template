@@ -126,6 +126,8 @@ product-view
 
     <div class="review" style="height: 110vh; overflow-y: scroll; scroll-behavior: smooth; overflow-x: hidden;">
         <h3 class="text-center m-5">Review</h3>
+
+        <a href="{% url 'review' product.id %}" class="btn btn-primary ">Write Review</a>
         {% for review in reviews %}
 
         <div class="row my-4 bg-light p-3">
@@ -161,6 +163,7 @@ product-view
             </div>
         </div>
         {% endfor %}
+
     </div>
 
 

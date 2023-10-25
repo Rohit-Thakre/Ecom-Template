@@ -35,7 +35,12 @@ account
                         <strong>Pin:</strong> {{address.pin}}<br>
 
                     </p>
-                    <a href="{% url 'edit_profile' %}" class="btn btn-primary">Edit Profile</a>
+                    <div class="btn_grp  text-center">
+                        <a href="{% url 'edit_profile' %}" class="btn btn-primary mx-2">Edit
+                            Profile</a>
+                        <a href="{% url 'merchant_details' %}" class="btn btn-warning mx-2">Be Merchant
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
