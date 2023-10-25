@@ -1,93 +1,42 @@
-<!doctype html>
-<html lang="en">
+{% extends 'base.html' %}
 
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <!-- Bootstrap CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+{% block title %}
+cart
+{% endblock title %}
 
 
-        <!-- font awesome icon -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-            integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-            crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <title>cart</title>
-    </head>
 
-    <body>
-
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-sm-top ">
-            <div class="container">
-                <a href="" class="navbar-brand">LOGO</a>
-
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse text-center justify-content-end" id="navbarSupportedContent">
-                    <form class="">
-                        <input class="form-control " type="search" placeholder="Search" aria-label="Search">
-                    </form>
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"> <i class="fa-solid fa-cart-plus fa-shake fa-xl"
-                                    style="color: white;"></i></a>
-                        </li>
-
-                        <li class="nav-item ms-md-4">
-                            <a class="nav-link" href="#">username</a>
-                        </li>
-                        <li class="nav-item">
-
-                            <div class="dropdown">
-                                <button class="btn btn-default dropdown-toggle" type="button" id="menu1"
-                                    data-bs-toggle="dropdown">
-                                    <img class="rounded-circle" src="https://i.stack.imgur.com/KKhkr.png?s=128&g=1"
-                                        height="30px" width="30px">
-                                </button>
-                                <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                                    <li><a class="dropdown-item me-3" href="#">setting</a></li>
-                                    <li><a class="dropdown-item me-3" href="#">log out</a></li>
-
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-
-                </div>
-        </nav>
-
-        <div class="container">
-            <div class="row  row-cols-1 row-cols-md-2 mt-3  ">
-                <div class="col-8" style="height: 90vh; overflow-y: scroll; scroll-behavior: smooth;">
-                    <!-- <h1 class=" mt-2 mb-5">Cart Items</h1> -->
-
-                    <table class="table">
-                        <thead class="sticky-sm-top">
-                            <tr>
-                                <td>Img</td>
-                                <td>Item Name</td>
-                                <td class="">Origional Price</td>
-                                <td>Current Price</td>
-                                <td>Action</td>
-                            </tr>
-                        </thead>
+{% block content %}
 
 
-                        {% for item in cart %}
-                        <tr>
-                            <td>
-                                <img class="table-img" src="" alt="" height="100px" width="100px">
-                            </td>
-                            <td>{{item.product.name}}</td>
-                            <td>
-                                <!-- <div class="input-group mb-3 ps-3">
+
+
+<div class="container">
+    <div class="row  row-cols-1 row-cols-md-2 mt-3  ">
+        <div class="col-md-8" style="height: 90vh; overflow-y: scroll; scroll-behavior: smooth;">
+            <!-- <h1 class=" mt-2 mb-5">Cart Items</h1> -->
+
+            <table class="table">
+                <thead class="">
+                    <tr class="">
+                        <td>Img</td>
+                        <td>Item Name</td>
+                        <td class="">Origional Price</td>
+                        <td>Current Price</td>
+                        <td>Action</td>
+                    </tr>
+                </thead>
+
+
+                {% for item in cart %}
+                <tr>
+                    <td>
+                        <img class="table-img" src="{{item.product.image.url}}" alt="image" height="110px"
+                            width="100px">
+                    </td>
+                    <td>{{item.product.name}}</td>
+                    <td>
+                        <!-- <div class="input-group mb-3 ps-3">
                                     <button class="btn " onclick="minus()"><i class="fa-solid fa-minus"></i></button>
 
                                     <input id="count" type="text" min="0" max="10" class="rounded-3 text-center mx-1"
@@ -95,68 +44,61 @@
 
                                     <button class="btn  " onclick="plus()"><i class="fa-solid fa-plus"></i></button>
                                 </div> -->
-                                {{item.product.max_price}}
-                            </td>
-                            <td>{{item.product.current_price}}</td>
+                        {{item.product.max_price}}
+                    </td>
+                    <td>{{item.product.current_price}}</td>
 
-                            <td>
-                                <a href="{% url 'product' item.product.id %}"
-                                    class="btn btn-primary  w-75 p-1 my-1">Buy</a>
-                                <a href="{% url 'remove_from_cart' item.product.id %}"
-                                    class="btn btn-danger w-75 p-1 my-1">Remove</a>
-                            </td>
-                        </tr>
-                        {% endfor %}
-
-
-                    </table>
-                </div>
-                <div class="col-3 ms-md-5  justify-content-end">
-                    <h1 class="mt-2 mb-2">Total </h1>
-                    <hr>
-
-                    <h5 class="my-3">Total Amount : <br>
-                        <span style="text-decoration: line-through;">{{total}}</span>
-                    </h5>
-                    <h6 class="my-4">
-                        total discount :
-                        <span class="bg-danger p-2  px-4 rounded-pill">{{off}} Off</span>
-                    </h6>
-                    <h3 class="my-4">After Discount: <br>
-                        <span>{{current_price}}</span>
-                    </h3>
+                    <td>
+                        <a href="{% url 'product' item.product.id %}" class="btn btn-primary  w-75 p-1 my-1">Buy</a>
+                        <a href="{% url 'remove_from_cart' item.product.id %}"
+                            class="btn btn-danger w-75 p-1 my-1">Remove</a>
+                    </td>
+                </tr>
+                {% endfor %}
 
 
-                    <a href="" class="btn btn-primary w-100">Checkout</a>
-
-                </div>
-            </div>
+            </table>
         </div>
-        <script>
-            function plus() {
-                let val = document.getElementById('count')
-                let temp = Number(val.value)
+        <div class="col-3 ms-md-5  d-none d-sm-block justify-content-end">
+            <h1 class="mt-2 mb-2">Total </h1>
+            <hr>
 
-                if (temp !== 10) {
-                    temp += 1
-                    val.value = temp
-                }
-            }
-            function minus() {
-                val = document.getElementById('count')
+            <h5 class="my-3">Total Amount : <br>
+                <span style="text-decoration: line-through;">{{total}}</span>
+            </h5>
+            <h6 class="my-4">
+                total discount :
+                <span class="bg-danger p-2  px-4 rounded-pill">{{off}} Off</span>
+            </h6>
+            <h3 class="my-4">After Discount: <br>
+                <span>{{current_price}}</span>
+            </h3>
 
-                let temp = Number(val.value)
-                if (temp !== 1) {
-                    temp -= 1
-                    val.value = temp
-                }
-            }
-        </script>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-            crossorigin="anonymous"></script>
+            <a href="" class="btn btn-primary w-100">Checkout</a>
 
-    </body>
+        </div>
+    </div>
+</div>
+<script>
+    function plus() {
+        let val = document.getElementById('count')
+        let temp = Number(val.value)
 
-</html>
+        if (temp !== 10) {
+            temp += 1
+            val.value = temp
+        }
+    }
+    function minus() {
+        val = document.getElementById('count')
+
+        let temp = Number(val.value)
+        if (temp !== 1) {
+            temp -= 1
+            val.value = temp
+        }
+    }
+</script>
+
+{% endblock content %}
