@@ -24,7 +24,7 @@ edit profile
                     Edit Profile
                 </div>
                 <div class="card-body">
-                    <form method="POST">
+                    <form method="POST" enctype="multipart/form-data">
                         {% csrf_token %}
 
                         <!-- Name input -->
@@ -35,9 +35,10 @@ edit profile
                         </div>
                         <!-- Email input -->
                         <div class="form-group">
-                            <label for="email">Email</label>
+                            {{form}}
+                            <!-- <label for="email">Email</label>
                             <input type="email" class="form-control" name="email" placeholder="Enter your email"
-                                value="{{user.email}}" required>
+                                value="{{user.email}}" required> -->
                         </div>
                         <!-- Phone input -->
                         <div class="form-group">

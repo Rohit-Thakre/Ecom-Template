@@ -73,6 +73,8 @@
                         </li>
                         <li class="nav-item">
 
+
+                            {% if request.user.is_authenticated %}
                             <div class="dropdown">
                                 <button class="btn btn-default dropdown-toggle" type="button" id="menu1"
                                     data-bs-toggle="dropdown">
@@ -91,6 +93,10 @@
                                     {% endif %}
                                 </ul>
                             </div>
+                            {% else %}
+                            <a href="login" class="nav-link">Login</a>
+                            {% endif %}
+
                         </li>
                     </ul>
 

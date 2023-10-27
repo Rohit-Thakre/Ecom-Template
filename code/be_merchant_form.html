@@ -28,9 +28,9 @@ merchant-form
         <div class="card-body">
             <form action="" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
-                <input type="file" id="myFile" name="avatar" class="form-control my-4 p-3 ">
-
-
+                {{form}}
+                <!-- <input type="file" id="myFile" name="avatar" class="form-control my-4 p-3 "> -->
+                <br>
                 <div class="row  row-cols-1 row-cols-md-2">
                     <div class="col">
                         <div class="form-check ">
@@ -83,7 +83,7 @@ merchant-form
 
 
 
-                <a href=" #" class="btn btn-danger mt-4 mx-2 px-5 py-2" type=>Discard</a>
+                <a href="{{ request.META.HTTP_REFERER }}" class="btn btn-danger mt-4 mx-2 px-5 py-2" type=>Discard</a>
                 <!-- <a href="#" class="btn btn-primary mt-4 mx-2  px-5 py-2" type="submit">Save</a> -->
                 <input type="submit" value="Save" class=" btn btn-primary mt-4 mx-2 px-5 py-2">
 
