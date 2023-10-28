@@ -10,10 +10,15 @@ product-view
 
 
 <div class="container ">
-    <div class="row p-3 mt-3 rounded-3" style="background-color: rgba(191, 198, 201, 0.662);">
+    <div class="row p-3 mt-3 rounded-3" style="background-color: rgba(133, 114, 203, 0.662);">
         <div class="col-sm-12 col-md-6 p-0 m-0 ">
+
+            <!-- for now in future multiple image upload add karna hai -->
+            <img class=" rounded-5 bg-primary card-img" src="{{product.image.url}}" alt="First slide" height="400px"
+                width="700px">
+
             <!-- img view -->
-            <div id="carousel1" class="carousel slide" data-ride="carousel">
+            <!-- <div id="carousel1" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active w-100">
                         <img class=" rounded-5 bg-primary card-img" src="{{product.image.url}}" alt="First slide"
@@ -34,18 +39,20 @@ product-view
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                 </a>
-            </div>
+            </div> -->
         </div>
 
         <div class="col ps-md-4">
             <div class="temp mt-3">
 
                 <p>
-                    <a href="" class=" bg-primary text-light text-decoration-none p-2 rounded-3 me-2">
+                    <a href="{% url 'product-like' product.id %}"
+                        class=" bg-primary text-light text-decoration-none p-2 rounded-3 me-2">
                         <i class="fa-solid fa-thumbs-up">{{product.likes}}+</i>
                     </a>
 
-                    <a href="" class=" bg-danger text-light text-decoration-none p-2 rounded-3 me-2">
+                    <a href="{% url 'product-dislike' product.id %}"
+                        class=" bg-danger text-light text-decoration-none p-2 rounded-3 me-2">
                         <i class="fa-solid fa-thumbs-down"> {{product.dislikes}}+</i>
                     </a>
                 </p>
@@ -122,7 +129,7 @@ product-view
     <!-- review start -->
 
 
-
+    {% if reviews %}
 
     <h3 class="text-center mt-4">Reviews</h3>
     <hr>
@@ -132,8 +139,10 @@ product-view
         {% for review in reviews %}
 
         <div class="row my-4 bg-light p-3">
-            <div class="col ">
-                <div class="container-fluid m-0 p-0">
+            <div class="col-2">
+                <img src="{{review.img.url}}" alt="" height="150px" width="150px">
+
+                <!-- <div class="container-fluid m-0 p-0">
                     <div class="row row-cols-md-4 gx-5">
                         <div class="col">
                             <img src="{{review.img.url}}" alt="" height="150px" width="150px">
@@ -148,7 +157,7 @@ product-view
                             <img src="{{review.img.url}}" alt="" height="150px" width="150px">
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="col offset-1">
                 <p> <img src="{{review.user.avatar.url}}" alt="" height="25px" width="25px"
@@ -167,6 +176,7 @@ product-view
 
     </div>
 
+    {% endif %}
 
     <!-- review end -->
 

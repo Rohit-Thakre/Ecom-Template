@@ -134,30 +134,31 @@ product-list
                     <div class="col-5 col-sm-3  ps-lg-4">
                         <img src="{{product.image.url}}" alt="" height="150px" width="150px">
 
-                        <div class="d-sm-block d-md-none">
-                            <h4 class="text-center">Price : $1</h4>
-                            <a href="{% url 'add_to_cart' product.id %}" class="btn btn-primary mt-1 w-100  ">add to
-                                cart</a>
-                        </div>
+
 
                     </div>
 
                     <div class=" col-7 col-sm-7">
-                        <h3>{{product.name}}</h3>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia reprehenderit mollitia porro
-                        nisi, nemo laudantium earum fugiat est assumenda repellat eveniet adipisci consectetur quas
-                        quibusdam autem, laboriosam, vel magnam sed!
-                        <!--
-                        <ul>
-                            <li>Brand: Redmi</li>
-                            <li>Ram: 8gb</li>
-                            <li>Processor: sd 732G</li>
-                            <li>camera: 108MP + 8MP+8MP+5MP</li>
-                            <li>camera: 108MP + 8MP+8MP+5MP</li> -->
-                        <!-- {{product.description}} 
-                            </ul>
-                        -->
-                        <!-- <p class="d-sm-block d-md-none">price:$500</p> -->
+                        <h3 class="" style="height: 60px;">{{product.name}}</h3>
+                        <p class="d-none d-sm-block">{{product}}</p>
+
+                        <!-- <p class="d-none d-sm-block">
+                            sm hiden
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia reprehenderit mollitia porro
+                            nisi, nemo laudantium earum fugiat est assumenda repellat eveniet adipisci consectetur quas
+                            quibusdam autem, laboriosam, vel magnam sed!
+                        </p> -->
+
+                        <div class="buy d-block d-sm-none">
+
+                            <h4> <del class="text-muted">{{product.max_price}}</del> {{product.current_price}}</h4>
+                            <!-- <p class="text-secondary">Item left : 15</p> -->
+                            <a href="{% url 'product' product.id %}" class="btn btn-success px-4 mb-2 rounded-3">Buy</a>
+                            <a href="{% url 'add_to_cart' product.id %}"
+                                class="btn btn-primary px-4 mb-2 rounded-3">Cart</a>
+
+                        </div>
+
                     </div>
 
                     <div class="col-2  d-none d-sm-block p-2">
