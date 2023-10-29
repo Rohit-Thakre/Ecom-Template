@@ -92,7 +92,8 @@ product-view
                     <a href="{% url 'add_to_cart' product.id %}" class=" btn btn-primary me-3 p-2 px-3"><i
                             class="fa-solid fa-cart-shopping"></i>Cart
                     </a>
-                    <a href="" class=" btn btn-success p-2 px-3"><i class="fa-regular fa-credit-card"></i>Buy</a>
+                    <a href="{% url 'order_summary' product.id %}" class=" btn btn-success p-2 px-3"><i
+                            class="fa-regular fa-credit-card"></i>Buy</a>
                 </div>
 
 
