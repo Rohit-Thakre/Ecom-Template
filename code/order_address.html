@@ -25,7 +25,7 @@ order_summary
                 {% for adrs in address %}
                 <tr>
                     <td>
-                        <a href="{% url 'order_summary' key %}?q={{adrs.id}}">{{adrs.street}},{{adrs.city}},{{adrs.state}},
+                        <a href="{% url 'order_address' key %}?q={{adrs.id}}">{{adrs.street}},{{adrs.city}},{{adrs.state}},
                             {{adrs.country}}
                         </a>
                     </td>
@@ -89,80 +89,12 @@ order_summary
                     </div>
                 </div>
 
-                <div class="btn-grp mt-3  d-flex justify-content-center">
-
-                    <button class="btn btn-warning me-4" onclick="payment_method()"> cash on
-                        delivery</button>
-                    <button id="rzp-button1" class="btn btn-primary ">Pay with Razorpay</button>
-                </div>
-            </div>
+                <p class="text-center mt-3 mb-0">
+                    <button class="btn btn-primary" type="submit">Save and
+                        Next</button>
+                </p>
         </form>
-
-
     </div>
 
-    {% if  show %}
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-        <strong>{{msg}}</strong>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-    {% endif %}
 </div>
 {% endblock content %}
-
-
-{% block script %}
-<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-<script>
-    var options = {
-        "key": "rzp_test_lBWJYMZSnmhS53", // Enter the Key ID generated from the Dashboard
-        // "amount": "", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
-        // "currency": "INR",
-        "name": "Ecom ",
-
-        "description": "Test Transaction",
-        "image": "https://example.com/your_logo",
-        "order_id": "{{order_id}}", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-        "handler": function (response) {
-            // alert(response.razorpay_payment_id);
-            // alert(response.razorpay_order_id);
-            // alert(response.razorpay_signature);
-
-
-            //  my changes--------------------------------------
-            let payment_id = response.razorpay_payment_id;
-            let order_id = response.razorpay_order_id;
-            let signature = response.razorpay_signature
-
-            let lnk = '?payment_id=' + payment_id + '&order_id=' + order_id + 'signature=' + signature
-            window.location = lnk
-
-
-
-        },
-
-    };
-    var rzp1 = new Razorpay(options);
-    rzp1.on('payment.failed', function (response) {
-        alert(response.error.code);
-        alert(response.error.description);
-        alert(response.error.source);
-        alert(response.error.step);
-        alert(response.error.reason);
-        alert(response.error.metadata.order_id);
-        alert(response.error.metadata.payment_id);
-    });
-    document.getElementById('rzp-button1').onclick = function (e) {
-
-        rzp1.open();
-        e.preventDefault();
-    }
-
-
-    // --------------------------------------payment method btn-------
-    function payment_method() {
-        document.getElementById("payment_method").submit();
-    }
-</script>
-
-{% endblock script %}
