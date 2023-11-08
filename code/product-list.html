@@ -135,12 +135,11 @@ product-list
                         <img src="{{product.image.url}}" alt="" height="150px" width="150px">
 
 
-
                     </div>
 
                     <div class=" col-7 col-sm-7">
                         <h3 class="" style="height: 60px;">{{product.name}}</h3>
-                        <p class="d-none d-sm-block">{{product}}</p>
+                        <p class="d-none d-sm-block">{{product.description |slice:"0:200"}}</p>
 
                         <!-- <p class="d-none d-sm-block">
                             sm hiden

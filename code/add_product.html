@@ -64,19 +64,22 @@ add product
 
 
                 <label for="img" class="form-label float-start">Product Image</label>
-                <!-- <input required type="file" id="myFile" name="img" class="form-control my-4 p-3 "> -->
+                <input required type="file" id="img" name="img" class="form-control my-4 p-3 ">
 
-                {{form}}
+                <!-- {{form}} -->
 
                 <label for="description" class="form-label float-start">Description</label>
                 <textarea name="description" id="" cols="30" rows="10" class="form-control mt-4 p-3"
                     placeholder="Write your description here..."></textarea>
 
-                <!-- <a href=" #" class="btn btn-danger mt-4 mx-2 px-5 py-2">Discard</a>
-                        <a href="#" class="btn btn-primary mt-4 mx-2  px-5 py-2" type="submit">Upload</a> -->
+                <div class="div">
+                    <label for="banner_img" class="form-label float-start">Banner Image</label>
+                    <input type="file" id="banner_img" name="img" class="form-control my-4 p-3 ">
+                </div>
 
-                <a href="{% url 'home' %}" class="btn btn-danger mt-4 mx-2 px-5 py-2">Discard</a>
-                <!-- <a href="" class="btn btn-primary mt-4 mx-2  px-5 py-2">Save</a> -->
+
+
+                <a href={{request.META.HTTP_REFERER}} class="btn btn-danger mt-4 mx-2 px-5 py-2">Discard</a>
                 <input required type="submit" value="Save" class="btn btn-primary mt-4 mx-2  px-5 py-2">
             </form>
         </div>

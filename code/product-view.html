@@ -130,37 +130,29 @@ product-view
     <!-- review start -->
 
 
+    <a href="{% url 'review' product.id %}" class="btn btn-primary my-4">Write Review</a>
     {% if reviews %}
 
     <h3 class="text-center mt-4">Reviews</h3>
     <hr>
     <div class="review" style="height: 110vh; overflow-y: scroll; scroll-behavior: smooth; overflow-x: hidden;">
 
-        <a href="{% url 'review' product.id %}" class="btn btn-primary ">Write Review</a>
         {% for review in reviews %}
 
         <div class="row my-4 bg-light p-3">
-            <div class="col-2">
-                <img src="{{review.img.url}}" alt="" height="150px" width="150px">
+            <div class="col-sm-12 col-md-4">
 
-                <!-- <div class="container-fluid m-0 p-0">
-                    <div class="row row-cols-md-4 gx-5">
-                        <div class="col">
-                            <img src="{{review.img.url}}" alt="" height="150px" width="150px">
+                <div class="container-fluid p-3 ">
+                    <div class="row row-cols-md-2 ">
+                        {% for query in review.image  %}
+                        <div class="col-6">
+                            <img src="{{query.image.url}}" alt="" height="150px" width="150px">
                         </div>
-                        <div class="col">
-                            <img src="{{review.img.url}}" alt="" height="150px" width="150px">
-                        </div>
-                        <div class="col">
-                            <img src="{{review.img.url}}" alt="" height="150px" width="150px">
-                        </div>
-                        <div class="col">
-                            <img src="{{review.img.url}}" alt="" height="150px" width="150px">
-                        </div>
+                        {% endfor %}
                     </div>
-                </div> -->
+                </div>
             </div>
-            <div class="col offset-1">
+            <div class="col-sm-12 col-md-8">
                 <p> <img src="{{review.user.avatar.url}}" alt="" height="25px" width="25px"
                         class="bg-primary rounded-circle">
                     {{review.user.username}}

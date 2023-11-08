@@ -15,18 +15,13 @@ home
     <div class="carousel-inner">
 
         {% for banner in banners %}
-        <!-- <h1>{{banner.created}}</h1> -->
-        <div class="carousel-item active" data-bs-interval="100">
-            <img src="{{banner.img.url}}" class="d-block w-100 bg-primary" alt="..." height="400px">
-        </div>
+        <div class="carousel-item 
+        {% if forloop.counter0 == 0 %} active {% endif %}
+            " data-bs-interval="2000">
+            <a href="{% url 'product' banner.product.id %}">
 
-        <div class="carousel-item" data-bs-interval="100">
-            <img src="{{banner.img.url}}" class="d-block w-100 bg-warning" alt="..." height="400px">
-
-        </div>
-        <div class="carousel-item " data-bs-interval="100">
-            <img src="{{banner.img.url}}" class="d-block w-100 bg-secondary" alt="..." height="400px">
-
+                <img src="{{banner.img.url}}" class="d-block w-100 bg-primary" alt="..." height="400px">
+            </a>
         </div>
         {% endfor %}
 
@@ -41,7 +36,6 @@ home
     </button>
 </div>
 <!-- carousel end -->
-
 <div class="container">
 
     <div class="row gy-3 mt-3">
