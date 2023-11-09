@@ -100,15 +100,16 @@
 
                                     <li><a class="dropdown-item" href="{% url 'account' %}">Account</a></li>
                                     <hr>
-                                    <li><a class="dropdown-item " href="{% url 'logout' %}">log out</a></li>
+                                    <li><a class="dropdown-item " href="{% url 'logout_method' %}">log out</a></li>
                                     {% else %}
-                                    <li><a class="dropdown-item " href="{% url 'login' %}">log in</a></li>
+                                    <li><a class="dropdown-item " href="{% url 'login_method' %}">log in</a></li>
+
 
                                     {% endif %}
                                 </ul>
                             </div>
                             {% else %}
-                            <a href="login" class="nav-link">Login</a>
+                            <a href="{% url 'login_method' %}" class="nav-link">Login</a>
                             {% endif %}
 
                         </li>
